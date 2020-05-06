@@ -9,9 +9,8 @@ export default function App() {
     /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/,
   )
 
-  console.log(isLocalhostName)
-  console.log(isLocalhostIPv6)
-  console.log(isLocalhostIPv4)
+  console.log(window.location)
+
   // return isLocalhostName || isLocalhostIPv6 || isLocalhostIPv4
 
   const submitLocalHost = async (value, actions) => {
