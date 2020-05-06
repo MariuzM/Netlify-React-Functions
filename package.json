@@ -3,10 +3,9 @@
 	"main": "index.jsx",
 	"scripts": {
 		"start": "webpack-dev-server --config config/webpack.dev.js",
-		"build": "webpack --config config/webpack.prod.js --no-source-maps",
 		"start:lambda": "netlify-lambda serve functions",
+		"build": "webpack --config config/webpack.prod.js --no-source-maps",
 		"build:lambda": "netlify-lambda build functions",
-		"dev": "npm start & npm run start:lambda",
 		"prod": "npm run build; npm run build:lambda"
 	},
 	"author": "Marius Mariakinas",
@@ -15,6 +14,7 @@
 		"@babel/runtime": "^7.9.6",
 		"@emotion/babel-preset-css-prop": "^10.0.27",
 		"@emotion/core": "^10.0.28",
+		"axios": "^0.19.2",
 		"netlify-lambda": "^1.6.3",
 		"prop-types": "^15.7.2",
 		"react": "^16.13.1",

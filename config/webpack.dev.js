@@ -10,11 +10,12 @@ module.exports = merge(common, {
 
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../build'),
     publicPath: '/',
   },
   devServer: {
-    port: 9000,
+    // port: 9000,
+    writeToDisk: true,
 
     historyApiFallback: true,
 
