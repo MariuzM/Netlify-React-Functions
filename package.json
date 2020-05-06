@@ -3,10 +3,10 @@
 	"main": "index.jsx",
 	"scripts": {
 		"start": "webpack-dev-server --config config/webpack.dev.js",
+		"dev": "npm start & netlify dev",
 		"build": "webpack --config config/webpack.prod.js --no-source-maps",
 		"start:lambda": "netlify-lambda serve functions",
 		"build:lambda": "netlify-lambda build functions",
-		"dev": "npm start & netlify dev",
 		"prod": "npm run build; npm run build:lambda"
 	},
 	"author": "Marius Mariakinas",
