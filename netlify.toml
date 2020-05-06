@@ -2,3 +2,8 @@
 command = "npm run prod"
 functions = "lambda"
 publish = "build"
+
+[[redirects]]
+from = "/test"
+to = "/.netlify/functions/test"
+status = 200
