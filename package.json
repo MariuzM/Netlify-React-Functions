@@ -4,10 +4,10 @@
 	"scripts": {
 		"start": "webpack-dev-server --config config/webpack.dev.js",
 		"build": "webpack --config config/webpack.prod.js --no-source-maps",
-		"dev": "npm start & npm run start:lambda",
-		"prod": "npm run build; npm run build:lambda",
 		"start:lambda": "netlify-lambda serve functions",
-		"build:lambda": "netlify-lambda build functions"
+		"build:lambda": "netlify-lambda build functions",
+		"dev": "npm start & npm run start:lambda",
+		"prod": "npm run build; npm run build:lambda"
 	},
 	"author": "Marius Mariakinas",
 	"license": "ISC",
