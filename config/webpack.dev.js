@@ -7,13 +7,17 @@ const common = require('./webpack.common')
 module.exports = merge(common, {
   mode: 'development',
   // target: 'web',
+
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
   devServer: {
+    port: 9000,
+
     historyApiFallback: true,
+
     stats: {
       all: false,
       modules: true,
@@ -24,6 +28,14 @@ module.exports = merge(common, {
       errors: true,
       errorDetails: true,
     },
+
+    // proxy: {
+    //   '/.netlify': {
+    //     target: 'http://localhost:9000',
+    //     pathRewrite: { '^/.netlify/functions': '' },
+    //   },
+    // },
+
     // overlay: true,
     // historyApiFallback: true
   },
