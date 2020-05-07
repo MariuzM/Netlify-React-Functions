@@ -7,3 +7,8 @@ publish = "build"
 from = "/_base"
 to = "/.netlify/functions/_base"
 status = 200
+
+[[redirects]]
+from = "/_base2"
+to = "/.netlify/functions/_base2"
+status = 200
