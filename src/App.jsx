@@ -19,7 +19,7 @@ export default function App() {
 
   const submitLocalHostWithS = async (value, actions) => {
     await axios
-      .post(`/_base`)
+      .post(`_base`)
       .then((res) => {
         console.log(res)
       })
