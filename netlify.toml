@@ -11,4 +11,4 @@ status = 200
 [[redirects]]
 from = "/_base2"
 to = "/.netlify/functions/_base2"
-status = 200
+# status = 200
