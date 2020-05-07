@@ -1,1 +1,1 @@
-# Netlify-React-Functions
+# Netlify-React-Lambda-Template

@@ -3,7 +3,8 @@ import axios from 'axios'
 
 export default function App() {
   const currentHost = window.location.href
-  console.log(currentHost)
+  console.log(window.location)
+  console.log('Current Host', currentHost)
 
   const submitLocalHost = async (value, actions) => {
     await axios
