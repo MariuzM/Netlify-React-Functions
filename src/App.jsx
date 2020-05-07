@@ -39,6 +39,17 @@ export default function App() {
       })
   }
 
+  const submitLocalHostWithS2 = async (value, actions) => {
+    await axios
+      .post(`/_base2`)
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
   return (
     <>
       <button type="button" onClick={submitLocalHost}>
@@ -55,6 +66,10 @@ export default function App() {
 
       <button type="button" onClick={submitNetlifyApp}>
         Netlify App
+      </button>
+
+      <button type="button" onClick={submitLocalHostWithS2}>
+        Another Button
       </button>
     </>
   )
