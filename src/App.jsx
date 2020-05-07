@@ -8,9 +8,7 @@ export default function App() {
 
   const submitLocalHost = async (value, actions) => {
     await axios
-      .post(`${currentHost}_base`, {
-        // headers: { 'Content-Type': 'application/json' },
-      })
+      .post(`${currentHost}_base`)
       .then((res) => {
         console.log(res)
       })
@@ -21,9 +19,7 @@ export default function App() {
 
   const submitLocalHostWithS = async (value, actions) => {
     await axios
-      .post(`http://localhost:8888/_base`, {
-        // headers: { 'Content-Type': 'application/json' },
-      })
+      .post(`/_base`)
       .then((res) => {
         console.log(res)
       })
@@ -34,9 +30,7 @@ export default function App() {
 
   const submitNetlifyApp = async (value, actions) => {
     await axios
-      .post(`https://determined-curie-bc9b33.netlify.app/_base`, {
-        // headers: { 'Content-Type': 'application/json' },
-      })
+      .post(`https://determined-curie-bc9b33.netlify.app/_base`)
       .then((res) => {
         console.log(res)
       })
