@@ -1,76 +1,71 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 
-export default function App() {
-  const currentHost = window.location.href
-  console.log(window.location)
-  console.log('Current Host', currentHost)
+const currentHost = window.location.href
+console.log(window.location)
 
-  const submitLocalHost = async (value, actions) => {
+export default function App() {
+  const [subState1, setSubState1] = useState()
+  const [subState2, setSubState2] = useState()
+  const [subState3, setSubState3] = useState()
+  const [subState4, setSubState4] = useState()
+
+  const submit1 = async () => {
     await axios
       .post(`${currentHost}_base`)
-      .then((res) => {
-        console.log(res)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+      .then((res) => setSubState1(res.data.data))
+      .catch((err) => console.log(err))
   }
 
-  const submitLocalHostWithS = async (value, actions) => {
+  const submit2 = async () => {
     await axios
       .post(`_base`)
-      .then((res) => {
-        console.log(res)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+      .then((res) => setSubState2(res.data.data))
+      .catch((err) => console.log(err))
   }
 
-  const submitNetlifyApp = async (value, actions) => {
+  const submit3 = async () => {
     await axios
-      .post(`https://determined-curie-bc9b33.netlify.app/_base`)
-      .then((res) => {
-        console.log(res)
-      })
+      .post(`https://determined-curie-bc9b33.netlify.app/.netlify/functions/_base`)
+      .then((res) => setSubState3(res.data.data))
       .catch((err) => {
+        setSubState3('- Error, check Console')
         console.log(err)
       })
   }
 
-  const submitLocalHostWithS2 = async (value, actions) => {
+  const submit4 = async () => {
     await axios
       .post(`/_base2`)
-      .then((res) => {
-        console.log(res)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+      .then((res) => setSubState4(res.data.data))
+      .catch((err) => console.log(err))
   }
 
   return (
     <>
-      <button type="button" onClick={submitLocalHost}>
-        Test 1
-      </button>
+      <div>
+        <button type="button" onClick={submit1}>
+          Test 1 {subState1}
+        </button>
+      </div>
 
-      <br />
+      <div>
+        <button type="button" onClick={submit2}>
+          Test 2 {subState2}
+        </button>
+      </div>
 
-      <button type="button" onClick={submitLocalHostWithS}>
-        Test 2
-      </button>
+      <div>
+        <button type="button" onClick={submit3}>
+          Netlify App {subState3}
+        </button>
+      </div>
 
-      <br />
-
-      <button type="button" onClick={submitNetlifyApp}>
-        Netlify App
-      </button>
-
-      <button type="button" onClick={submitLocalHostWithS2}>
-        Another Button
-      </button>
+      <div>
+        <button type="button" onClick={submit4}>
+          Another Button {subState4}
+        </button>
+      </div>
     </>
   )
 }
