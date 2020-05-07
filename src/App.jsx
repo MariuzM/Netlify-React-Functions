@@ -42,13 +42,13 @@ export default function App() {
   return (
     <>
       <button type="button" onClick={submitLocalHost}>
-        http LocalHost:8888
+        Test 1
       </button>
 
       <br />
 
       <button type="button" onClick={submitLocalHostWithS}>
-        https LocalHost:8888
+        Test 2
       </button>
 
       <br />
